@@ -1,0 +1,35 @@
+{
+  "short_name": "DreamWay",
+  "name": "DreamWay Credit Management System",
+  "description": "Professional credit, customer, and chit fund management platform.",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/pwa-192x192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/pwa-512x512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "type": "image/png",
+      "sizes": "180x180"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#1B365D",
+  "theme_color": "#1B365D",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "categories": ["finance", "productivity", "utilities"]
+}

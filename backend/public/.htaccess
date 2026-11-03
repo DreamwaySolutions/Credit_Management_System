@@ -1,0 +1,18 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # 1. Forward /api requests to Node.js Backend Server (Port 5000)
+  <IfModule mod_proxy.c>
+    RewriteCond %{REQUEST_URI} ^/api [NC]
+    RewriteRule ^api/(.*)$ http://127.0.0.1:5000/api/$1 [P,L]
+  </IfModule>
+
+  # 2. Serve static files directly if they exist
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+
+  # 3. All other routes rewrite to index.html for Single Page Application
+  RewriteRule ^ index.html [L]
+</IfModule>

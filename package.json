@@ -1,0 +1,14 @@
+{
+  "name": "dreamway-credit-management-system",
+  "version": "1.0.0",
+  "description": "DreamWay Credit Management System",
+  "scripts": {
+    "dev": "npx concurrently \"npm --prefix backend start\" \"npm --prefix frontend run dev\"",
+    "dev:all": "npx concurrently \"npm --prefix backend start\" \"npm --prefix frontend run dev\"",
+    "backend": "npm --prefix backend start",
+    "build": "npm --prefix frontend run build",
+    "start": "npm --prefix backend start",
+    "server": "npm --prefix backend start",
+    "seed": "npm --prefix backend run seed"
+  }
+}

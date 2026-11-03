@@ -1,0 +1,161 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-family: 'Inter', sans-serif;
+    background-color: #99C2D1; /* Main Page Background Color */
+    color: #0F172A;            /* Dark Navy */
+    -webkit-tap-highlight-color: transparent;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, .font-heading {
+    font-family: 'Outfit', 'Inter', sans-serif;
+  }
+
+  /* Remove spin buttons from all number inputs */
+  input[type="number"]::-webkit-outer-spin-button,
+  input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  input[type="number"] {
+    -moz-appearance: textfield;
+    appearance: textfield;
+  }
+}
+
+/* Global Text Selection Highlighting Fix - Soft Pastel Blue Background with Sharp Dark Navy Text */
+::selection {
+  background-color: #93C5FD !important; /* Soft Pastel Blue Highlight */
+  color: #0F172A !important;            /* Sharp Dark Navy Text */
+}
+
+::-moz-selection {
+  background-color: #93C5FD !important;
+  color: #0F172A !important;
+}
+
+/* PDF Engine Amount Pill Alignment Fix - Exact Vertical Centering for html2canvas PDF Export */
+.pdf-amount-pill {
+  display: inline-block !important;
+  vertical-align: middle !important;
+  height: 24px !important;
+  line-height: 22px !important;
+  padding: 0 10px !important;
+  border-radius: 6px !important;
+  background-color: #F1F5F9 !important;
+  border: 1px solid #CBD5E1 !important;
+  box-sizing: border-box !important;
+  margin: 1px 0 !important;
+  white-space: nowrap !important;
+  position: relative !important;
+}
+
+.pdf-amount-text {
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 1 !important;
+  display: inline-block !important;
+  position: relative !important;
+  top: -4px !important; /* Pulls text up by 4px to place amount in exact vertical middle in html2canvas PDF */
+  font-size: 12px !important;
+  font-weight: 800 !important;
+  color: #0F172A !important;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif !important;
+}
+
+/* Smooth Accordion Animation */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-down {
+  animation: slideDown 0.2s ease-out forwards;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #99C2D1;
+}
+::-webkit-scrollbar-thumb {
+  background: #64748B;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #0F172A;
+}
+
+/* Dedicated Print & Pagination CSS */
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 8mm;
+  }
+
+  html, body {
+    background: #FFFFFF !important;
+    color: #0F172A !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    height: auto !important;
+    overflow: visible !important;
+  }
+
+  /* Hide all interactive UI elements during printing */
+  header,
+  main,
+  footer,
+  button,
+  input,
+  .no-print {
+    display: none !important;
+  }
+
+  /* Make printable report visible and take full print container */
+  #printable-report {
+    display: block !important;
+    visibility: visible !important;
+    position: relative !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 100% !important;
+    height: auto !important;
+    overflow: visible !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #FFFFFF !important;
+    color: #0F172A !important;
+  }
+
+  /* Avoid orphan row breaks inside store containers */
+  .print-row-container,
+  .break-inside-avoid,
+  .footer-summary {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+    -webkit-region-break-inside: avoid !important;
+  }
+
+  /* Enforce clean single page breaks without blank pages */
+  .page-break {
+    page-break-after: always !important;
+    break-after: page !important;
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+  }
+}

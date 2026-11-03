@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1B365D" />
+      <stop offset="100%" stop-color="#0A192F" />
+    </linearGradient>
+
+    <!-- Vibrant Cyan/Blue Accent Gradient -->
+    <linearGradient id="primaryGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8" />
+      <stop offset="100%" stop-color="#1F90E6" />
+    </linearGradient>
+
+    <!-- Upward Trend Emerald/Cyan Growth Gradient -->
+    <linearGradient id="growthGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1F90E6" />
+      <stop offset="100%" stop-color="#00E5FF" />
+    </linearGradient>
+
+    <!-- Glow Filter -->
+    <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="12" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- App Icon Squircle Container -->
+  <rect x="24" y="24" width="464" height="464" rx="108" fill="url(#bgGrad)" stroke="#38BDF8" stroke-width="6" stroke-opacity="0.3" />
+
+  <!-- Subtle Inner Ambient Glow -->
+  <circle cx="256" cy="240" r="160" fill="#1F90E6" opacity="0.12" filter="url(#softGlow)" />
+
+  <!-- Stylized Geometric "D" Monogram + Financial Growth Arrow -->
+  <g transform="translate(4, -6)">
+    <!-- Vertical Pillar of 'D' -->
+    <rect x="148" y="132" width="44" height="248" rx="22" fill="url(#primaryGrad)" />
+
+    <!-- Curved Outer Wing of 'D' with Upward Growth Trajectory -->
+    <path d="M 192 132 C 320 132, 384 196, 384 256 C 384 316, 320 380, 192 380" 
+          fill="none" 
+          stroke="url(#growthGrad)" 
+          stroke-width="44" 
+          stroke-linecap="round" 
+          stroke-linejoin="round" />
+
+    <!-- Dynamic Upward Financial Arrow Inside the 'D' -->
+    <path d="M 230 292 L 296 226 L 276 226 M 296 226 L 296 246" 
+          fill="none" 
+          stroke="#FFFFFF" 
+          stroke-width="16" 
+          stroke-linecap="round" 
+          stroke-linejoin="round" />
+
+    <!-- Prosperity Spark Dot -->
+    <circle cx="340" cy="180" r="14" fill="#00E5FF" filter="url(#softGlow)" />
+  </g>
+
+  <!-- Clean Subtext Monogram -->
+  <text x="256" y="442" 
+        font-family="'Outfit', 'Inter', -apple-system, sans-serif" 
+        font-size="34" 
+        font-weight="800" 
+        letter-spacing="5" 
+        fill="#FFFFFF" 
+        text-anchor="middle" 
+        opacity="0.95">DREAMWAY</text>
+</svg>
